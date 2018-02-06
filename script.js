@@ -1,5 +1,5 @@
 let numeroQuadrados = 30000;   
-let draw = true;
+let draw = false;
 
 
 for (let i = 0; i < numeroQuadrados; i++) {
@@ -45,15 +45,18 @@ for (let i = 0; i < numeroQuadrados; i++) {
     
 }
 
-document.onkeypress = function(evt) {
-    console.log(evt);
-    evt = evt || window.event;
-    var charCode = evt.keyCode || evt.which;
-     
-    if (charCode === 32) {
-        draw = !draw;
+document.onclick = function() {
+        
+    if (draw) {
+        document.body.style.cursor = "default";
+    } else {
+        document.body.style.cursor = "url('brush128'), default";
     }
+        
+    draw = !draw;
+}
+    
 
-};
+
 
 
